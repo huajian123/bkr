@@ -1,0 +1,25 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "bkr-l": {
+      "description": "A blank schematic.",
+      "factory": "./bkr-list/index#bkrList",
+      "schema": "./bkr-list/schema.json"
+    },
+    "bkr-l-c": {
+      "description": "A blank schematic.",
+      "factory": "./bkr-list-check/index#bkrList",
+      "schema": "./bkr-list-check/schema.json"
+    },
+    "bkr-s": {
+      "description": "A blank schematic.",
+      "factory": "./bkr-service/index#bkrService",
+      "schema": "./bkr-service/schema.json"
+    },
+    "bkr-m": {
+      "description": "A blank schematic.",
+      "factory": "./bkr-module/index#bkrModule",
+      "schema": "./bkr-module/schema.json"
+    }
+  }
+}

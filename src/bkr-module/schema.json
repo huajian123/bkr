@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsMyListComponent",
+  "title": "My Component Schema",
+  "type": "object",
+  "description": "Creates a new service.",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "集成"
+    },
+    "name": {
+      "type": "string",
+      "description": "目录名",
+      "x-prompt": "请填写目录名",
+      "alias": "n"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

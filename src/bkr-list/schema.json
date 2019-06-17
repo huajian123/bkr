@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsMyListComponent",
+  "title": "My Component Schema",
+  "type": "object",
+  "description": "Creates a new service.",
+  "properties": {
+    "firstlevel": {
+      "type": "string",
+      "description": "一级目录",
+      "x-prompt": "请填写一级目录",
+      "alias": ["fl"]
+    },
+    "secondlevel": {
+      "type": "string",
+      "description": "二级目录",
+      "x-prompt": "请填写一级目录",
+      "alias": ["sl"]
+    }
+  },
+  "required": [
+    "firstlevel",
+    "secondlevel"
+  ]
+}

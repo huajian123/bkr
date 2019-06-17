@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsMyListComponent",
+  "title": "My Component Schema",
+  "type": "object",
+  "description": "Creates a new service.",
+  "properties": {
+    "filename": {
+      "type": "string",
+      "description": "文件夹名",
+      "x-prompt": "填写文件夹名",
+      "alias": ["fn"]
+
+    },
+    "name": {
+      "type": "string",
+      "description": "文件名",
+      "x-prompt": "填写文件名",
+      "alias": ["n"]
+    }
+  },
+  "required": [
+    "filename",
+    "name"
+  ]
+}

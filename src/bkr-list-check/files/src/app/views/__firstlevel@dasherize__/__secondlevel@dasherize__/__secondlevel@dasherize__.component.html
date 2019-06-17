@@ -1,0 +1,40 @@
+<ng-container *ngIf="currentPage===pageType.List">
+  <app-ufast-table-nav [extendedSearchTpl]="extendedSearch" [quickSearchTpl]="quickSearch"
+                       (clearCondition)="resetSearch()"
+                       [operateBtnsTpl]="operateBtns" [btnGroupParam]="btnGroupParam"
+                       [downReqMethod]="'get'" [downLoadUrl]="'/costManage/export'"
+                       [downParams]="filters"
+  >
+  </app-ufast-table-nav>
+  <ng-template #quickSearch>
+    <div class="search-item">
+      <label>车牌：</label>
+      <div>
+        <input nz-input [(ngModel)]="filters.orgName"  placeholder="车牌"/>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #extendedSearch>
+    <div class="search-item">
+      <label>申请类型：</label>
+      <div>
+        <nz-select style="width: 100%"  [(ngModel)]="filters.orgName" nzPlaceHolder="请选择申请类型">
+        </nz-select>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #operateBtns>
+    <button nz-button nzType="primary" class="m-r-sm" >新增</button>
+    <button nz-button nzType="default" class="m-r-sm" >批量删除</button>
+  </ng-template>
+  <app-ufast-table [tableConfig]="tableConfig" [dataList]="dataList" (updateList)="getDataList($event)"></app-ufast-table>
+</ng-container>
+
+<!--<ng-container *ngIf="currentPage===pageType.Detail">
+  <app-company-detail [id]="itemId" (returnBack)="returnToList()"></app-company-detail>
+</ng-container>-->
+
+<ng-template #operationTpl let-orgId="id">
+  <span class="operate-text" (click)="edit(orgId)" *appAuthBtu="ActionCode.updateCompany">修改</span>
+  <span class="operate-text" (click)="goDetail(orgId)">查看</span>
+</ng-template>

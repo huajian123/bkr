@@ -1,0 +1,8 @@
+
+
+# IDEs
+.idea/
+.vscode/
+
+# Misc
+node_modules/
