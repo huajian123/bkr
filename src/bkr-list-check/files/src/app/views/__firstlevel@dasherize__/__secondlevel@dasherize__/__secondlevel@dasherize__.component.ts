@@ -4,6 +4,7 @@ import {UfastTableNs} from '../../../layout/layout.module';
 import {ActionCode} from '../../../../environments/actionCode';
 import {UfTableNavNs} from '../../../component/platform-common/ufast-table-nav/ufast-table-nav.component';
 import {ShowMessageService} from '../../../widget/show-message/show-message';
+import {UfastUtilService} from '../../../core/infra/ufast-util.service';
 
 enum PageType {
   List,
@@ -30,7 +31,7 @@ export class <%= classify(secondlevel) %>Component implements OnInit {
   ActionCode = ActionCode;
   selectedItemList: string[];
 
-  constructor(private dataService: CompanyService, private messageService: ShowMessageService) {
+  constructor(private dataService: CompanyService, private messageService: ShowMessageService, private utilService: UfastUtilService) {
     this.dataList = [];
     this.currentPage = this.pageType.List;
     this.filters = {};

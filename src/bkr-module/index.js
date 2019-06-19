@@ -4,14 +4,18 @@ const schematics_1 = require("@angular-devkit/schematics");
 const path_1 = require("path");
 const config_1 = require("@schematics/angular/utility/config");
 const strings_1 = require("@angular-devkit/core/src/utils/strings");
-const schematics_utilities_1 = require("schematics-utilities");
+// import {addModuleImportToRootModule, getProjectFromWorkspace} from "schematics-utilities";
 const stringUtils = { dasherize: strings_1.dasherize, classify: strings_1.classify };
 function addModuleToImports(options) {
     return (host, context) => {
-        const workspace = config_1.getWorkspace(host);
-        const project = schematics_utilities_1.getProjectFromWorkspace(workspace, options.project ? options.project : Object.keys(workspace['projects'])[0]);
+        //const workspace = getWorkspace(host);
+        /*const project = getProjectFromWorkspace(
+            workspace,
+            options.project ? options.project : Object.keys(workspace['projects'])[0]
+        );*/
         const moduleName = strings_1.classify(options.name) + 'Module';
-        schematics_utilities_1.addModuleImportToRootModule(host, moduleName, './views/' + strings_1.dasherize(options.name) + '/' + strings_1.dasherize(options.name) + '.module', project);
+        // 添加模块到根module
+        // addModuleImportToRootModule(host, moduleName, './views/'+dasherize(options.name)+'/'+dasherize(options.name)+'.module', project);
         context.logger.log('info', `"${moduleName}" 模块添加成功`);
         return host;
     };
