@@ -12,7 +12,7 @@ import {
 import {join, normalize} from 'path';
 import {getWorkspace} from '@schematics/angular/utility/config';
 import {classify, dasherize} from "@angular-devkit/core/src/utils/strings";
-// import {addModuleImportToRootModule, getProjectFromWorkspace} from "schematics-utilities";
+import {addModuleImportToRootModule, getProjectFromWorkspace} from "schematics-utilities";
 
 const stringUtils = {dasherize, classify};
 
@@ -26,7 +26,7 @@ export function addModuleToImports(options: any): Rule {
         const moduleName = classify(options.name)+'Module';
 
         // 添加模块到根module
-        // addModuleImportToRootModule(host, moduleName, './views/'+dasherize(options.name)+'/'+dasherize(options.name)+'.module', project);
+         addModuleImportToRootModule(host, moduleName, './views/'+dasherize(options.name)+'/'+dasherize(options.name)+'.module', project);
         context.logger.log('info', `"${moduleName}" 模块添加成功`);
 
         return host;
